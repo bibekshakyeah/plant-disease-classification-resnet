@@ -17,10 +17,10 @@ def predict():
     print('here')
 
     # Get image data from request
-    img_bytes = request.get_data()
+    image_file = request.files['image']
     
     # Make prediction and return result as JSON
-    result = {'prediction': predict_image(img_bytes,model)}
+    result = {'prediction': predict_image(image_file,model)}
     return jsonify(result)
 
 # Run app

@@ -163,7 +163,7 @@ def predict_image(img_bytes, model):
         Tuple[str, float]: Predicted class label and accuracy percentage.
     """
     # Convert image bytes to PIL Image
-    img = Image.open(io.BytesIO(img_bytes)).convert('RGB')
+    img = Image.open(img_bytes).convert('RGB')
 
     # Resize the image to the expected input size of the model
     img = img.resize((256, 256))
